@@ -71,6 +71,7 @@ public class SysUserController {
         sysUserLambdaQueryWrapper.eq(SysUser::getUsername, username);
         SysUser sysUser = userService.getOne(sysUserLambdaQueryWrapper);
         sysUser.setPassword("******");
+
         return Result.success(sysUser);
     }
 }

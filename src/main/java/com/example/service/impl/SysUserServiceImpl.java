@@ -42,6 +42,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
             if(userDb.getPassword().equals(userVo.getPassword())){
                 UserVo userVo1 = CopyUtil.copy(userDb, UserVo.class);
                 return userVo1;
+
             }else {
                 //密码不对
                 commonDto.setMessage("用户不存在或密码不正确");
@@ -69,6 +70,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         wrapper.lambda().eq(SysUser::getUsername,userName);
         //查询成功返回数据
         List<SysUser> userList = userMapper.selectList(wrapper);
+
         //如果为空就说明没有这个用户名,就可以注册
         if(CollectionUtils.isEmpty(userList)){
             return null;
