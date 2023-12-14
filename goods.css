@@ -1,0 +1,13 @@
+.example{
+    display: table; 
+    border-spacing: 30px;
+}
+.back{
+    width: 200px; height: 300px; background-color: #DCDCDC; display: table-cell;
+}
+.name{
+    width: 100%;
+     height: 100px;
+      background-color: #F6F6F6;
+       text-align: center;
+}
