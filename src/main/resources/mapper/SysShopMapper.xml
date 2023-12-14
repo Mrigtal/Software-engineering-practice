@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.SysShopMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.entity.SysShop">
+        <id column="id" property="id" />
+        <result column="shopname" property="shopname" />
+        <result column="shopmessage" property="shopmessage" />
+        <result column="shoppice" property="shoppice" />
+        <result column="shoppoto" property="shoppoto" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, shopname, shopmessage, shoppice, shoppoto
+    </sql>
+    <select id="queryByCategoryId" resultType="com.example.vo.SysShopVo">
+        select s.*,c.name as category_name,c.id as category_id
+        from sys_category_shop cs
+                 left JOIN sys_shop s on cs.shop_id = s.id
+                 left join sys_category c on c.id = cs.category_id
+        where cs.category_id = #{cs.categor_id}
+    </select>
+    <select id="getList" resultType="com.example.vo.SysShopVo">
+        SELECT s.*, c.id as category_id, c.name as category_name
+        FROM sys_shop s
+                 LEFT JOIN sys_category_shop cs ON s.id = cs.shop_id
+                 LEFT JOIN sys_category c ON cs.category_id = c.id
+    </select>
+
+
+</mapper>
