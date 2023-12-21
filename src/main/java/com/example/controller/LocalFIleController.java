@@ -25,7 +25,7 @@ public class LocalFIleController {
 
     public String getFILE_DIR() {
         if (FILE_DIR == null){
-            FILE_DIR = System.getProperty("user.dir") + "\\\\upload\\\\";
+            FILE_DIR = System.getProperty("user.dir") + File.separator + "upload" + File.separator;
         }
         return FILE_DIR;
     }

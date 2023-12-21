@@ -80,7 +80,7 @@ import TheCourse from "@/components/about/the-course";
        */
       // listCourselevel() {
       //   let _this = this;
-      //   this.axios.get('http://localhost:8542/sysShop/getlist',{
+      //   this.axios.get('http://124.221.174.197:8542/sysShop/getlist',{
       //     params:{
       //       page:this.query.page,
       //       size:this.query.size,
@@ -97,7 +97,7 @@ import TheCourse from "@/components/about/the-course";
       listCourse(id) {
         let _this = this;
         this.query.typeId = id;
-        this.axios.get('http://localhost:8542/sysShop/getlist',{
+        this.axios.get('http://124.221.174.197:8542/sysShop/getlist',{
           params:{
             page:this.query.page,
             size:this.query.size,

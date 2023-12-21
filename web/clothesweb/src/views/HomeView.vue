@@ -100,7 +100,7 @@ export default {
     },
     getMenulist(role) {
       this.axios
-        .get(" http://localhost:8542/sysMenu/getMenulist", {
+        .get(" http://124.221.174.197:8542/sysMenu/getMenulist", {
           params: {
             role: role,
           },

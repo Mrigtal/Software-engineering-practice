@@ -45,7 +45,7 @@ export default {
   methods: {
     getList() {
       this.axios
-        .get("http://localhost:8542/sysUser/list/custom/", {})
+        .get("http://124.221.174.197:8542/sysUser/list/custom/", {})
         .then((resp) => {
           console.log(resp.data.data);
           this.purchaseHistory = resp.data.data.map((item) => ({

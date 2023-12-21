@@ -89,7 +89,7 @@
         <el-form-item label="商品图片:">
           <el-upload
             class="avatar-uploader"
-            action="http://localhost:8542/oss/file/upload?module=shoppoto"
+            action="http://124.221.174.197:8542/oss/file/upload?module=shoppoto"
             :show-file-list="false"
             :on-success="handleAvatarSuccess"
           >
@@ -149,7 +149,7 @@ export default {
   methods: {
     getList() {
       this.axios
-        .get("http://localhost:8542/sysXiadan/getlist", {
+        .get("http://124.221.174.197:8542/sysXiadan/getlist", {
           params: {
             page: this.query.page,
             size: this.query.size,
@@ -166,7 +166,7 @@ export default {
     loadAllClasses() {
       this.allClasses = []; //将信息先置空
       this.axios
-        .get("http://localhost:8542/sysXiadan/getlist", {
+        .get("http://124.221.174.197:8542/sysXiadan/getlist", {
           params: {
             page: this.query.page,
             size: this.query.size,
@@ -192,7 +192,7 @@ export default {
     handleDelete(scope) {
       let id = scope.row.id;
       this.axios
-        .delete("http://localhost:8542/sysXiadan/delete/" + id)
+        .delete("http://124.221.174.197:8542/sysXiadan/delete/" + id)
         .then((resp) => {
           let data = resp.data;
           if (data.success) {
@@ -214,7 +214,7 @@ export default {
     },
     // submitForm(){
     //   this.form.createUserId = this.query.createUserId;
-    //   this.axios.post('http://localhost:8542/sysShop/save/',this.form).then((resp)=>{
+    //   this.axios.post('http://124.221.174.197:8542/sysShop/save/',this.form).then((resp)=>{
     //     let data = resp.data;
     //     if(data.success){
     //       this.dialogFormVisible = false;

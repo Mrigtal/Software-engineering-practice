@@ -173,7 +173,7 @@
         <el-form-item label="商品图片:">
           <el-upload
             class="avatar-uploader"
-            action="http://localhost:8542/file"
+            action="http://124.221.174.197:8542/file"
             :show-file-list="false"
             :on-success="handleAvatarSuccess"
           >
@@ -287,7 +287,7 @@ export default {
     },
     modifyCategory() {
       this.axios
-        .put("http://localhost:8542/sysCategory/", {
+        .put("http://124.221.174.197:8542/sysCategory/", {
           id: this.form2.selectedCategory,
           name: this.form2.newCategoryName, // 新的分类名称
         })
@@ -319,7 +319,7 @@ export default {
     fetchCategories() {
       // 从服务器加载分类列表
       this.axios
-        .get("http://localhost:8542/sysCategory/")
+        .get("http://124.221.174.197:8542/sysCategory/")
         .then((response) => {
           this.categories = response.data.data; // 假设响应数据是分类数组
           console.log(this.categories);
@@ -330,7 +330,7 @@ export default {
     },
     getList() {
       this.axios
-        .get("http://localhost:8542/sysShop/getlist", {
+        .get("http://124.221.174.197:8542/sysShop/getlist", {
           params: {
             page: this.query.page,
             size: this.query.size,
@@ -344,7 +344,7 @@ export default {
               let imageNames = item.shoppoto.split(",");
               item.shoppoto = imageNames
                 // .map((img, index) =>
-                //   index == 0 ? img : `http://localhost:8542/file/${img}`
+                //   index == 0 ? img : `http://124.221.174.197:8542/file/${img}`
                 // )
                 .join(",");
             }
@@ -361,7 +361,7 @@ export default {
     addCategory() {
       // 处理新增分类的逻辑
       this.axios
-        .post("http://localhost:8542/sysCategory/", {
+        .post("http://124.221.174.197:8542/sysCategory/", {
           name: this.form2.newCategoryName, // 新的分类名称
         })
         .then((response) => {
@@ -386,7 +386,7 @@ export default {
     },
     processImageUrls(shoppoto) {
       if (!shoppoto) return [];
-      const baseUrl = "http://localhost:8542/file/";
+      const baseUrl = "http://124.221.174.197:8542/file/";
       return shoppoto.split(",").map((img, index) => {
         if (index == 0) {
           return img;
@@ -398,7 +398,7 @@ export default {
     loadAllClasses() {
       this.allClasses = []; //将班级信息先置空
       this.axios
-        .get("http://localhost:8542/sysShop/getlist", {
+        .get("http://124.221.174.197:8542/sysShop/getlist", {
           params: {
             page: this.query.page,
             size: this.query.size,
@@ -427,7 +427,7 @@ export default {
     handleDelete(scope) {
       let id = scope.row.id;
       this.axios
-        .delete("http://localhost:8542/sysShop/delete/" + id)
+        .delete("http://124.221.174.197:8542/sysShop/delete/" + id)
         .then((resp) => {
           let data = resp.data;
           if (data.success) {
@@ -462,7 +462,7 @@ export default {
     submitForm1() {
       this.form1.id = this.query.createUserId;
       this.axios
-        .post("http://localhost:8542/sysUser/save/", this.form1)
+        .post("http://124.221.174.197:8542/sysUser/save/", this.form1)
         .then((resp) => {
           let data = resp.data;
           if (data.success) {
@@ -486,7 +486,7 @@ export default {
 
       // 发送 POST 请求到服务器
       this.axios
-        .post("http://localhost:8542/sysShop/save/", dataToSubmit)
+        .post("http://124.221.174.197:8542/sysShop/save/", dataToSubmit)
         .then((resp) => {
           let data = resp.data;
           if (data.success || data.msg == "操作成功") {
@@ -506,7 +506,7 @@ export default {
     },
     handleAvatarSuccess(res, file) {
       // 添加新图片文件名到 imgdata 数组
-      this.imgdata.push(`http://localhost:8542/file/${res.data}`);
+      this.imgdata.push(`http://124.221.174.197:8542/file/${res.data}`);
 
       // 格式化 form.shoppoto 字符串
       if (this.imgdata.length > 0) {

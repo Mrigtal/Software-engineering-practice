@@ -132,7 +132,7 @@ export default {
       console.log(SessionStorage.get("USERNAME"));
       this.form.username = SessionStorage.get("USERNAME");
       this.axios
-        .post("http://localhost:8542/sysXiadan/save/", this.form)
+        .post("http://124.221.174.197:8542/sysXiadan/save/", this.form)
         .then((resp) => {
           let data = resp.data;
           if (data.success) {
@@ -167,7 +167,7 @@ export default {
       let _this = this;
 
       this.axios
-        .get("http://localhost:8542/sysShop/getlist", {
+        .get("http://124.221.174.197:8542/sysShop/getlist", {
           params: {
             page: this.query.page,
             size: this.query.size,
@@ -186,7 +186,7 @@ export default {
 
     getUserList() {
       this.axios
-        .get("http://localhost:8735/comment/getlist", {
+        .get("http://124.221.174.197:8735/comment/getlist", {
           params: {
             page: this.query.page,
             size: this.query.size,

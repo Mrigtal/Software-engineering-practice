@@ -139,7 +139,7 @@ export default {
     goToRegister() {
       // 注册逻辑
       this.axios
-        .post("http://localhost:8542/sysUser/register/", this.registerForm)
+        .post("http://124.221.174.197:8542/sysUser/register/", this.registerForm)
         .then((resp) => {
           let data = resp.data;
           console.log(data.msg, "返回结果");
@@ -161,7 +161,7 @@ export default {
     },
     goToLogin() {
       this.axios
-        .post("http://localhost:8542/sysUser/login/", this.loginForm)
+        .post("http://124.221.174.197:8542/sysUser/login/", this.loginForm)
         .then((resp) => {
           let data = resp.data;
           console.log(data, "返回结果");

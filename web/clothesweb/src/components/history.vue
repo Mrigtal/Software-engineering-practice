@@ -59,7 +59,7 @@ export default {
   methods: {
     processImageUrls(shoppoto) {
       if (!shoppoto) return [];
-      const baseUrl = "http://localhost:8542/file/";
+      const baseUrl = "http://124.221.174.197:8542/file/";
       return shoppoto.split(",").map((img, index) => {
         if (index == 0) {
           return img;
@@ -71,7 +71,7 @@ export default {
     getList() {
       this.axios
         .get(
-          "http://localhost:8542/sysXiadan/query/" +
+          "http://124.221.174.197:8542/sysXiadan/query/" +
             SessionStorage.get("USERNAME"),
           {}
         )

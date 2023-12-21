@@ -57,7 +57,7 @@ export default {
   methods: {
     getList() {
       this.axios
-        .get("http://localhost:8542/sysShop/getlist", {
+        .get("http://124.221.174.197:8542/sysShop/getlist", {
           params: {
             page: this.query.page,
             size: this.query.size,
@@ -77,7 +77,7 @@ export default {
       let _this = this;
 
       this.axios
-        .get("http://localhost:8542/sysShop/getlist", {
+        .get("http://124.221.174.197:8542/sysShop/getlist", {
           params: {
             page: this.query.page,
             size: this.query.size,
