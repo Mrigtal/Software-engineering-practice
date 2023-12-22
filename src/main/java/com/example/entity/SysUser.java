@@ -23,8 +23,7 @@ import lombok.EqualsAndHashCode;
 public class SysUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-
+    
     /**
      * id
      */
