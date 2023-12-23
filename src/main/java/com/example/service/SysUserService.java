@@ -16,6 +16,7 @@ import com.example.vo.UserVo;
 public interface SysUserService extends IService<SysUser> {
 
     UserVo login(UserVo userVo, CommonDto<UserVo> commonDto);
+    
 
     void save(UserVo userVo, CommonDto<UserVo> commonDto);
 }

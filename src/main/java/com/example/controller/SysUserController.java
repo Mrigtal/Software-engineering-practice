@@ -64,7 +64,6 @@ public class SysUserController {
         }
         return Result.success(list);
     }
-
     @GetMapping("/info/{username}")
     public Result queryInfo(@PathVariable String username) {
         LambdaQueryWrapper<SysUser> sysUserLambdaQueryWrapper = new LambdaQueryWrapper<>();
